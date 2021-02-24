@@ -4,7 +4,7 @@ target_out = Pathname TARGET_OUT
   # 输出文件路径
   output_css_path = target_out + 'index.css'
   # 复制
-  FileUtils.cp PPZMain::CSS_FILE_PATH, output_css_path
+  FileUtils.cp CSS_FILE_PATH, output_css_path
 
 # html
   # 输出文件路径

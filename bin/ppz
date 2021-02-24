@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/ppz'
-require_relative './common'
+require 'rubygems'
+require 'bundler/setup'
+
+require 'ppz'
 require 'fileutils'
 require 'pathname'
+require_relative './common'
 
-TARGET_IN, TARGET_OUT, IS_FOLDER = PPZMain::Util.get_in_and_out
+TARGET_IN, TARGET_OUT, IS_FOLDER = Util.get_in_and_out
 
 if IS_FOLDER
   require_relative './folder.rb'
