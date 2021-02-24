@@ -8,4 +8,6 @@ Gem::Specification.new do |s|
   s.files       = Dir['bin/*.rb'] + Dir['asset/**/*']
   s.homepage    = 'https://github.com/daGaiGuanYu/ppz'
   s.license     = 'MIT'
+
+  s.add_runtime_dependency 'ppz'
 end
