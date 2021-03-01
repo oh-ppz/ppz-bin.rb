@@ -1,5 +1,6 @@
-CURRENT_PATH = File.dirname __FILE__
-CSS_FILE_PATH = (Pathname CURRENT_PATH) + '../asset/style/index.css'
+CURRENT_PATHNAME = Pathname File.dirname __FILE__
+CSS_FILE_PATH = CURRENT_PATHNAME + '../asset/style/index.css'
+JS_FILE_PATH = CURRENT_PATHNAME + '../asset/index.js'
 
 class Util
   class << self
