@@ -1,5 +1,10 @@
 nav-width = 188px
 
+special-color-r = 230
+special-color-g = 230
+special-color-b = 230
+special-font-color = rgb(special-color-r, special-color-g, special-color-b)
+
 html
   line-height 1.5
 body, div, p, aside
@@ -12,7 +17,7 @@ body
 
 aside
   overflow-y auto
-  padding: 2rem 1rem;
+  padding 2rem 1rem;
 
   position fixed
   top 0
@@ -55,7 +60,7 @@ aside
 
 article
   margin-left nav-width
-  padding: 1px 2rem 1rem 1rem
+  padding 1px 2rem 1rem 1rem
 h1
   font-size 2rem
 h2
@@ -83,13 +88,26 @@ h1, h2, h3
   background #141c22
   overflow auto
   border-radius 4px
-  color #eeeeee
+  color special-font-color
+  line-height 1.6
 
   font-family monospace
   white-space pre
 
   margin 1rem 0
-  padding 1rem
+  padding 1.3rem 3.6rem
+  counter-reset line-index 1
+  li
+    &::before
+      counter-increment line-index
+      content ''
+    &::marker
+      content counter(line-index) " | "
+      color rgba(special-color-r, special-color-g, special-color-b, 0.3)
+      text-align right
+
+    &:hover::marker
+      color special-font-color
 
 .special-txt
   background rgba(27, 31, 35, 0.05)

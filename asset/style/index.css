@@ -94,11 +94,25 @@ h3::before {
   background: #141c22;
   overflow: auto;
   border-radius: 4px;
-  color: #eee;
+  color: #e6e6e6;
+  line-height: 1.6;
   font-family: monospace;
   white-space: pre;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 1.3rem 3.6;
+  counter-reset: line-index 1;
+}
+.special-block-container li::before {
+  counter-increment: line-index;
+  content: '';
+}
+.special-block-container li::marker {
+  content: counter(line-index) " | ";
+  color: rgba(230,230,230,0.3);
+  text-align: right;
+}
+.special-block-container li:hover::marker {
+  color: #e6e6e6;
 }
 .special-txt {
   background: rgba(27,31,35,0.05);
