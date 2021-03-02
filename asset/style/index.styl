@@ -110,14 +110,20 @@ h1, h2, h3
     &:hover::marker
       color special-font-color
   button.copy
-    background url(./copy.svg)
-    width 32px
-    height 32px
-    background opacity
+    position absolute
+    right 1rem
+    top 1rem
+
+    cursor pointer
+    background url(../img/copy20.png)
+    width 20px
+    height 20px
     outline none
     border none
     opacity 0.5
     &:hover
+      opacity 0.8
+    &:active
       opacity 1
 
 .special-txt
