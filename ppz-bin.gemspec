@@ -5,9 +5,9 @@ Gem::Specification.new do |s|
   s.summary     = '一种写作方式'
   s.authors     = ['wuse']
   s.email       = '372301467@qq.com'
-  s.files       = Dir['bin/*.rb'] + Dir['asset/**/*']
+  s.files       = Dir['bin/**/*.rb'] + Dir['asset/**/*']
   s.homepage    = 'https://github.com/daGaiGuanYu/ppz'
   s.license     = 'MIT'
 
-  s.add_runtime_dependency 'ppz'
+  s.add_runtime_dependency 'ppz', '~>1.0.1'
 end

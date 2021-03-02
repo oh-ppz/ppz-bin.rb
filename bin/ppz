@@ -1,17 +1,41 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'bundler/setup'
-
 require 'ppz'
-require 'fileutils'
-require 'pathname'
-require_relative './common'
+require_relative './preparation/index'
 
-TARGET_IN, TARGET_OUT, IS_FOLDER = Util.get_in_and_out
+class Main
+  attr_accessor :target_in, :target_out, :is_folder
 
-if IS_FOLDER
-  require_relative './folder.rb'
-else
-  require_relative './doc.rb'
+  def main
+    Preparation.new self
+    
+    if @is_folder
+      folder
+    else
+      doc
+    end
+  end
+
+  def doc
+    # 输出文件路径
+    output_html_path = @target_out + 'index.html'
+    # 解析文档
+    parser = PPZ::FileDocParser.new @target_in
+    # 拼接上 css 文件链接
+    output_html = %~<link rel="stylesheet" href=".ppz/asset/style/index.css"/>#{
+      parser.get_model.to_html 
+    }<script type="module" src=".ppz/asset/js/index.js"></script>~
+    # 输出
+    PPZ::Func::write_to_file output_html_path.to_s, output_html
+  end
+
+  def folder
+    puts '输入文件夹: ' + @target_in.to_s
+    puts '输出文件夹: ' + @target_out.to_s
+
+    model = PPZ::Folder::FolderModel.new @target_in, 0
+    model.compile @target_out
+  end
 end
+
+Main.new.main

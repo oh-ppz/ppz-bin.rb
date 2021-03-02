@@ -96,10 +96,11 @@ h3::before {
   border-radius: 4px;
   color: #e6e6e6;
   line-height: 1.6;
+  display: relative;
   font-family: monospace;
   white-space: pre;
   margin: 1rem 0;
-  padding: 1.3rem 3.6;
+  padding: 1.3rem 3.6rem;
   counter-reset: line-index 1;
 }
 .special-block-container li::before {
