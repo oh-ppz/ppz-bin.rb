@@ -15,8 +15,8 @@ class Preparation
     main_object.is_folder = File.directory? target_in
     
     # 输出文件
-    if target_out
-      target_out = Pathname target_out
+    if a2
+      target_out = Pathname a2
     else
       # 从输入文件获取文件名
       basename = target_in.basename.to_s

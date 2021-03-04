@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'ppz-bin'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.executables << 'ppz'
   s.summary     = '一种写作方式'
   s.authors     = ['wuse']
